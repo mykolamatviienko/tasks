@@ -64,6 +64,28 @@
         }
 
         enough(100, 20, 70);
+
+        // Write a function that  accepts an array of 10 integers (between 0 and 9), that returns a string of those numbers in the form of a phone number.
+
+        var myArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+
+        var createPhoneNumber = function (array) {
+            var result = "(";
+            for (var i = 0; i < myArray.length; i++) {
+                if (i == 2) {
+                    result += myArray[i] + ")" + " ";
+                } else if (i == 5) {
+                    result += myArray[i] + "-";
+                } else {
+                    result += myArray[i];
+                }
+            }
+
+            return result;
+        }
+
+        console.log(createPhoneNumber(myArray));
+
     </script>
 </body>
 
