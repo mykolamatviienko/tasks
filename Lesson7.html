@@ -41,10 +41,19 @@
 
         //  Simple, remove the spaces from the string, then return the resultant string
 
-        function removeTheSpaces(string){
+        function removeTheSpaces(string) {
             var str = string.split(' ').join("");
 
-            return console.log(str);       
+            return console.log(str);
+        }
+
+        //  Your goal is to create a function that removes the first and last characters of a string
+
+        function removeFirstAndLastCharacters(str) {
+            if (str.length >= 2) {
+
+                return console.log(str.substring(1, str.length - 1));
+            }
         }
     </script>
 </body>
