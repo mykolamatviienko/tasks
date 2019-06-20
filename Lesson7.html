@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lesson 6</title>
+</head>
+
+<body>
+    <script>
+        //  Return a new array consisting of elements which are multiple of their own index in input array (length > 1).
+        var myArr = [22, -6, 32, 82, 9, 25];
+        var newArr = [];
+        function newMultipleArray(arr) {
+            if (arr.length > 1) {
+                for (var i = 0; i < arr.length; i++) {
+                    if (Number.isInteger(arr[i] / i)) {
+                        newArr.push((arr[i]));
+                    }
+                }
+            }
+        }
+
+        newMultipleArray(myArr);
+        console.log(newArr);
+        
+        
+    </script>
+</body>
+
+</html>
