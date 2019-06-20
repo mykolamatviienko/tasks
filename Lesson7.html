@@ -25,8 +25,20 @@
 
         newMultipleArray(myArr);
         console.log(newArr);
-        
-        
+
+        //  The first century spans from the year 1 up to and including the year 100, The second - from the year 101 up to and including the year 200, etc.
+
+        //  Task :
+        //  Given a year, return the century it is in.
+
+        function centuryFromYear(year) {
+            for (var century = 0; year > 0; century++) {
+                year -= 100;
+            }
+
+            return console.log(century);
+        }
+
     </script>
 </body>
 
