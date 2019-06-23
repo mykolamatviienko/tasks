@@ -10,6 +10,9 @@
 
 <body>
     <script>
+
+        //  tasks in class
+
         //  Return a new array consisting of elements which are multiple of their own index in input array (length > 1).
         var myArr = [22, -6, 32, 82, 9, 25];
         var newArr = [];
@@ -55,6 +58,55 @@
                 return console.log(str.substring(1, str.length - 1));
             }
         }
+
+        //  homework here
+
+        //  In this kata, you must create a digital root function.
+
+        function digitalRoot(num) {
+            if (num.toString(10).length > 1) {
+                num = num.toString().split('').reduce(function (a, b) {
+
+                    return +a + +b;
+                });
+                digitalRoot(num);
+            }
+
+            return num;
+        }
+
+
+        console.log(digitalRoot(43258));    //22
+
+        //  Number is a palindrome if it is equal to the number with digits in reversed order. For example, 5, 44, 171, 4884 are palindromes and 43, 194, 4773 are not palindromes.
+
+        var len = 0;
+
+        function palindromeChainLength(num) {
+            //debugger;
+            if (+num != +num.toString().split('').reverse().join('')) {
+                num = +num + +num.toString().split('').reverse().join('');
+                ++len;
+                palindromeChainLength(+num);
+            }
+            return len;
+        }
+
+        //  The magic sum of 3s is calculated on an array
+
+        function magicSum(arr) {
+            //debugger;
+            var result = arr.reduce(function (sum, curr) {
+                if ((curr.toString().indexOf('3') != -1) && (+curr % 2 != 0)) {
+                    return +sum + +curr;
+                }else{
+                    return sum;
+                }
+            }, 0);
+            return result;
+        }
+
+        var myArr = [5, 65, 31, 12, 13, 3, 32];
     </script>
 </body>
 
