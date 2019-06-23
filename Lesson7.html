@@ -79,12 +79,12 @@
         console.log(digitalRoot(43258));    //22
 
         //  Number is a palindrome if it is equal to the number with digits in reversed order. For example, 5, 44, 171, 4884 are palindromes and 43, 194, 4773 are not palindromes.
-        
+
         var len = 0;
-        
+
         function palindromeChainLength(num) {
             //debugger;
-            if(+num != +num.toString().split('').reverse().join('')){
+            if (+num != +num.toString().split('').reverse().join('')) {
                 num = +num + +num.toString().split('').reverse().join('');
                 ++len;
                 palindromeChainLength(+num);
@@ -92,6 +92,21 @@
             return len;
         }
 
+        //  The magic sum of 3s is calculated on an array
+
+        function magicSum(arr) {
+            //debugger;
+            var result = arr.reduce(function (sum, curr) {
+                if ((curr.toString().indexOf('3') != -1) && (+curr % 2 != 0)) {
+                    return +sum + +curr;
+                }else{
+                    return sum;
+                }
+            }, 0);
+            return result;
+        }
+
+        var myArr = [5, 65, 31, 12, 13, 3, 32];
     </script>
 </body>
 
