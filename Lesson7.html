@@ -62,7 +62,7 @@
         //  homework here
 
         //  In this kata, you must create a digital root function.
-        
+
         function digitalRoot(num) {
             if (num.toString(10).length > 1) {
                 num = num.toString().split('').reduce(function (a, b) {
@@ -78,6 +78,19 @@
 
         console.log(digitalRoot(43258));    //22
 
+        //  Number is a palindrome if it is equal to the number with digits in reversed order. For example, 5, 44, 171, 4884 are palindromes and 43, 194, 4773 are not palindromes.
+        
+        var len = 0;
+        
+        function palindromeChainLength(num) {
+            //debugger;
+            if(+num != +num.toString().split('').reverse().join('')){
+                num = +num + +num.toString().split('').reverse().join('');
+                ++len;
+                palindromeChainLength(+num);
+            }
+            return len;
+        }
 
     </script>
 </body>
