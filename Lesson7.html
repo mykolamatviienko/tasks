@@ -99,7 +99,7 @@
             var result = arr.reduce(function (sum, curr) {
                 if ((curr.toString().indexOf('3') != -1) && (+curr % 2 != 0)) {
                     return +sum + +curr;
-                }else{
+                } else {
                     return sum;
                 }
             }, 0);
@@ -107,6 +107,24 @@
         }
 
         var myArr = [5, 65, 31, 12, 13, 3, 32];
+
+        //  Pete, the baker
+
+        function cakes(recipe, ingred) {
+            var arr = [];
+            //debugger;
+            for (var key in recipe) {
+                if ((ingred[key] / recipe[key]) >= 1) {
+                    arr.push(Math.round(ingred[key] / recipe[key]));
+                } else {
+                    arr.push(0);
+                }
+            }
+            var res = arr.reduce((min, curr) => (+min > +curr) ? +curr : +min);
+
+            return (+res);
+        }
+
     </script>
 </body>
 
