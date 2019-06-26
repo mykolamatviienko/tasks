@@ -115,7 +115,7 @@
             //debugger;
             for (var key in recipe) {
                 if ((ingred[key] / recipe[key]) >= 1) {
-                    arr.push(Math.round(ingred[key] / recipe[key]));
+                    arr.push(Math.floor(ingred[key] / recipe[key]));
                 } else {
                     arr.push(0);
                 }
