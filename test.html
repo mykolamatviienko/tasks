@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lesson 6</title>
+</head>
+
+<body>
+    <script>
+
+        //  task 1
+
+        function sum(a) {
+
+            var temp = a;
+
+            function next(b) {
+                temp = temp + b;
+                return next;
+            }
+
+            next.toString = function () {
+                return temp;
+            };
+
+            return next;
+        }
+
+
+        
+        //  task 2
+
+        function mono(arr){
+            if(arr[0] > arr[1]){
+                arr.reverse();
+            }
+
+            for(var i = 0; i < arr.length; i++){
+                if(arr[i] > arr[i+1]){
+                    return false;
+                }
+            }
+            return true;
+        }
+
+    </script>
+</body>
+
+</html>
