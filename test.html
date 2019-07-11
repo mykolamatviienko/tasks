@@ -30,21 +30,112 @@
         }
 
 
-        
+
         //  task 2
 
-        function mono(arr){
-            if(arr[0] > arr[1]){
+        function mono(arr) {
+            if (arr[0] > arr[1]) {
                 arr.reverse();
             }
 
-            for(var i = 0; i < arr.length; i++){
-                if(arr[i] > arr[i+1]){
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] > arr[i + 1]) {
                     return false;
                 }
             }
             return true;
         }
+
+        //11.07.2019
+
+        //task 1
+
+        function removeProperty(obj, prop) {
+            if (obj[prop]) {
+                delete obj[prop];
+
+                return true;
+            }
+
+            return false;
+        }
+
+        //task 2
+
+        function formatDate(userDate) {
+            // format from M/D/YYYY to YYYYMMDD
+            var splitter;
+
+            for (var i = 0; i < userDate.length; i++) {
+                if (userDate[i] == '.') {
+                    splitter = userDate[i];
+                } else if (userDate[i] == '/') {
+                    splitter = userDate[i];
+                }
+            }
+
+            var dateArr = userDate.split(splitter);
+            var result = dateArr[2] + dateArr[1] + dateArr[0];
+
+            return String(result);
+        }
+
+        //console.log(formatDate("12/31/2014"));
+
+        //task 3
+
+        function Worker(name, surname, rate, days) {
+            this.name = name;
+            this.surname = surname;
+            this.rate = rate;
+            this.days = days;
+
+            this.getRate = function () {
+                return this.rate;
+            }
+
+            this.getDays = function () {
+                return this.days;
+            }
+
+            this.getSalary = function () {
+                return this.rate * this.days;
+            }
+
+            this.setRate = function (r) {
+                this.rate = r;
+            }
+
+            this.setDays = function (d) {
+                this.days = d;
+            }
+        }
+
+        let worker = new Worker('Имя', 'Фамилия', 10, 31);
+        console.log(worker.getRate()); //выведет 10
+        console.log(worker.getDays()); //выведет 31
+        console.log(worker.getSalary()); //выведет 310 - то есть 10*31
+        worker.setRate(20); //увеличим ставку
+        worker.setDays(10); //уменьшим дни
+        console.log(worker.getSalary()); //выведет 200 - то есть 20*10
+
+        function PreciousWorker(name, surname, rate, days, multiplier) {
+            Worker.apply(this, arguments);
+
+            this.getSalary = function () {
+                return this.rate * this.days * multiplier;
+            }
+        }
+
+        console.log("------------------------ precious");
+
+        let preciousWorker = new PreciousWorker('Имя', 'Фамилия', 10, 31, 5);
+        console.log(preciousWorker.getRate()); //выведет 10
+        console.log(preciousWorker.getDays()); //выведет 31
+        console.log(preciousWorker.getSalary()); //выведет 1550 - то есть 10*31*5
+        preciousWorker.setRate(20); //увеличим ставку
+        preciousWorker.setDays(10); //уменьшим дни
+        console.log(preciousWorker.getSalary()); //выведет 1000 - то есть 20*10*5
 
     </script>
 </body>
