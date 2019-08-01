@@ -137,6 +137,60 @@
         preciousWorker.setDays(10); //уменьшим дни
         console.log(preciousWorker.getSalary()); //выведет 1000 - то есть 20*10*5
 
+        // test 01.08.2019
+
+        //task 1
+
+        fs.readFile(filename, (err, data) => {
+            return new Promise(function (resolve, reject) {
+                if (err) {
+
+                    reject("error");
+                }
+
+                else {
+
+                    resolve("success");
+                }
+            })
+
+        }).then(
+            error => console.error(error),
+            result => console.log(data)
+        );
+
+
+        // task 3
+
+        function sum(a) {
+
+            var temp = a;
+
+            function next(b) {
+                temp = temp + b;
+                return next;
+            }
+
+            next.toString = function () {
+                return temp;
+            };
+
+            return next;
+        }
+
+
+        // task 4
+        function reverse(num, r = 0) {
+            if (!num) {
+                return r;
+            }
+            r = r * 10 + num % 10;
+            return reverse(Math.floor(num / 10), r);
+        }
+        console.log(reverse(12345));
+
+        // task 2
+        
     </script>
 </body>
 
